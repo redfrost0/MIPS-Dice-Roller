@@ -5,9 +5,10 @@ The code works by using a main loop and branches that control which side of the 
 
 The main loop works by incrementing $t0, once this contains a value that is equal to the value in $t1 the code will jump out of the loop to the exit. The random number generator is seeded, and then called using syscall 42 with the maximum previously set. The outcome of this is moved in to $s1 for testing. The probability of each side can be set by testing how large the generated number is, using ‘ble’ branches the logic works as follows:
 
-Number Generated    Branch to Label
 0, 1, 2, 3, 4	      Dragon
+
 5, 6, 7	            Sword
+
 8, 9, 10, 11	      Orc
 
 The amount of numbers in the ‘number generated’ column sets the probability that the given label will be called, and therefore the side will be outputted.
